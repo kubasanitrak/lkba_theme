@@ -1,0 +1,464 @@
+.custom-input--select,
+.donation-headline,
+.form-column {
+    margin-bottom: $pad-T;
+}
+.PS-stripe-form .form-control {
+    margin-bottom: calc(#{$pad-T} / 2);
+}
+.PS-stripe-form {
+    margin-top: calc(#{$pad-T} * 1.5);
+}
+.btn-major--container {
+    margin-top: calc(#{$pad-T} / 2);
+    margin-top: $pad-T;
+}
+.form-column {
+    &--instructions {
+        border-top: 8px solid var(--black);
+        border-bottom: 2px dotted var(--black);
+        padding-top: $pad-T;
+    }
+}
+
+.receipt-confirmation--container {
+    justify-content: flex-start;
+    @include mq(mq-land) {
+        justify-content: center;
+    }
+    .col {
+        @include mq(mq-land) {
+            text-align: center;
+        }
+    }
+}
+
+.btn-major {
+    max-width: initial;
+    @include mq(mq-land) {
+        max-width: 15em;
+    }
+    &.align-center {
+        margin: auto;
+    }
+}
+.btn-primary {
+    margin: auto;
+    text-shadow: none;
+    outline: none;
+}
+
+.instructions-list {
+    margin-left: 1em;
+    padding-bottom: calc(#{$pad-T} * 1.5);
+    @include mq(mq-land) {
+        margin-left: 0;
+    }
+    li {
+        margin-bottom: calc(#{$pad-T} / 3);
+    }
+}
+
+.text-wrapper {
+    p {
+        max-width: 42em;
+    }
+}
+
+.step1,
+.step2,
+.step3 {
+    // padding-top: $pad-T;
+    padding: $pad-T 0 0;
+    @include mq(mq-L-UP) {
+        padding: 0 calc(#{$pad-L} / 1) 0;
+    }
+    .row {
+        // margin-bottom: calc(#{$pad-T} / 2);
+    }
+}
+
+.recap-label {
+    &-light {
+        font-family: Graphik;
+        font-weight: normal;
+    }
+
+}
+
+.form-control {
+
+}
+.text-wrapper {
+    padding: $pad-T $pad-L;
+    @include mq(mq-BREAK-P) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+$gray-4: #c0c0c0;
+$arrow-S: 12px;
+
+.donation-cotrolls--container {
+    @include mq(mq-land-L-UP) {
+        overflow: hidden;
+    }
+    display: flex;
+    flex-wrap: wrap;
+    // position: relative;
+    // z-index: 150;
+
+    @include mq(mq-land) {
+    }
+
+    .btn-step--container {
+        flex: 0 0 100%;
+        @include mq(mq-land) {
+            flex: 0 0 calc(100% / 3);
+        }
+    }
+    .btn-step {
+        text-align: center;
+        padding: calc(#{$pad-T} * 1) $pad-L;
+        @include mq(mq-land) {
+            padding: calc(#{$pad-T} * 0.3) $pad-L;
+        }
+        display: block;
+        position: relative;
+        // background-color: var(--gray5);
+        // background-color: var(--color-bg);
+        background-color: var(--white);
+        color: var(--black);
+        font-size: $fz-H6;
+        // color: var(--white);
+
+        &:not(:nth-of-type(2)) {
+        }
+
+        &.btn-step1 {
+            z-index: 3;
+        }
+        &.btn-step2 {
+            z-index: 2;
+        }
+        &.btn-step1,
+        &.btn-step3,
+        &.btn-step2 {
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                bottom: calc(#{$arrow-S} * -0.75);
+                left: 50%;
+                transform: translate(-50%, 0);
+                width: 0; 
+                height: 0; 
+                border-left: $arrow-S solid transparent;
+                border-right: $arrow-S solid transparent;
+                // border-top: calc(#{$arrow-S} * 0.75) solid var(--gray5);
+                // border-top: calc(#{$arrow-S} * 0.75) solid var(--color-bg);
+                border-top: calc(#{$arrow-S} * 0.75) solid var(--white);
+                @include mq(mq-land-L-UP) {
+                    left: initial;
+                    right: calc(#{$arrow-S} * -1.75);
+                    transform: translate(0, -50%);
+                    top: 50%;
+                    // border-left: calc(#{$arrow-S} * 0.75) solid var(--gray5);
+                    // border-left: calc(#{$arrow-S} * 0.75) solid var(--color-bg);
+                    border-left: calc(#{$arrow-S} * 0.75) solid var(--white);
+                    border-right-color: transparent;
+                    border-top: 2rem solid transparent;
+                    border-bottom: 2rem solid transparent;
+                }
+            }
+            &.active {
+                &::after {
+                    // border-top-color: var(--gray3);
+                    // border-top-color: var(--color-bg);
+                    border-top-color: var(--gray5);
+
+                    @include mq(mq-land-L-UP) {
+                        // border-left-color: var(--gray3);
+                        // border-left-color: var(--color-bg);
+                        border-left-color: var(--gray5);
+
+                        border-top-color: transparent;
+                    }
+                }
+            }
+        }
+
+        &.btn-step3 {
+            &::after {
+                @include mq(mq-land-L-UP) {
+                    display: none;
+                }
+            }
+        }
+        
+        &.active {
+            // background-color: var(--gray3);
+            // background-color: var(--color-bg);
+            background-color: var(--gray5);
+
+            // color: var(--black);
+            color: var(--nmtd-1);
+        }
+
+        &:hover {
+            cursor: pointer;
+            // color: var(--black) !important;
+            color: var(--white) !important;
+            color: var(--nmtd-1) !important;
+        }
+
+        &.disabled {
+            color: var(--gray2);
+
+            // background-color: var(--white);
+            // background-color: var(--gray5);
+            background-color: var(--color-bg);
+            &::after {
+                // border-top-color: var(--white);
+                // border-top-color: var(--gray5);
+                border-top-color: var(--color-bg);
+                @include mq(mq-land-L-UP) {
+                    // border-left-color: var(--white);
+                    // border-left-color: var(--gray5);
+                    border-left-color: var(--color-bg);
+                    border-top-color: transparent;
+                }
+            }
+            cursor: not-allowed;
+            &:hover {
+                color: var(--gray2) !important;
+                // color: var(--black) !important;
+            }           
+        }
+    }
+}
+
+.validation-note {
+    display: none;
+    color: white;
+    padding: 2px 0.75rem;
+    position: absolute;
+    margin: 0;
+    font-size: 10px;
+    text-transform: uppercase;
+    background-color: var(--nmtd-2);
+    font-weight: 700;
+    // border-radius: 0 0 5px 5px;
+}
+
+
+
+
+.test-data {
+    margin-top: calc(#{$pad-T} * 3);
+}
+.test-data,
+.tutorial-table {
+    color: var(--gray3);
+    font-size: $fz-PLAIN;
+    * {
+        color: inherit;
+    }
+}
+.tutorial-table {
+    margin-top: $pad-T;
+    display: table;
+    max-width: 34rem;
+
+    tbody {
+        width: 100%;
+        th, td {
+            text-align: left;
+            padding: 0.5rem 0;
+        }
+        th:nth-child(2) {
+            text-align: right;
+        }
+        tr {
+            background: transparent !important;
+        }
+    }
+}
+.donation-wrapper {
+    margin: auto;
+    width: 100%;
+    max-width: 40rem;
+    // padding: 0 0 calc(#{$pad-T} * 1.5);
+    // @include mq(mq-land) {
+        padding: 0 $pad-L calc(#{$pad-T} * 1.5);
+    // }
+    @include mq(mq-iPad-port) {
+        padding: 0 $pad-L calc(#{$pad-T} * 1.5);
+    }
+    background-color: var(--gray4);
+    // background-color: hsla(0, 3%, 92%, 0.9);
+    @include clothoid-gradient($color: hsl(0, 0%, 92%), $alpha-from: 1, $alpha-to: 0);
+    border-bottom: $border-W solid var(--nmtd-1);
+    text-align: center;
+    .row + .row:not(.test-data):not(.margin-0):not(.btn-major--container) {
+        margin-top: calc(#{$pad-T} * 1.1);
+        @include mq(mq-land) {
+            margin-top: calc(#{$pad-T} * 0.5);
+        }
+    }
+    .user-set-amount--container,
+    .btn-major--container {
+        margin-bottom: calc(#{$pad-T} * 1);
+        @include mq(mq-land) {
+            margin-bottom: calc(#{$pad-T} * 0.75);
+        }
+        .btn {
+            max-width: 16em;
+            margin: auto;
+        }
+    }
+}
+.donation-box {
+    .show-user-set-amount {
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    input[name=user-set-amount] {
+        display: none;
+
+    }
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+    a:not(.btn) {
+        color: var(--black);
+        text-decoration: none;
+        border-bottom: 1px solid var(--black);
+        padding-top: 1px;
+        cursor: pointer;
+    }
+}
+
+.card-toggle {
+    &--row {
+        display: flex;
+        // background-color: red;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 0 $pad-L;
+    }
+    &--column {
+        padding: 0 $pad-L;
+    }
+    &--label {
+        &_true {}
+        &_false {}
+    }
+}
+
+ /* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: calc(var(--switch-BASE) * 2.25);
+  height: calc(var(--switch-BASE) * 1.25);
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked + .slider {
+            background-color: var(--switch-active);
+            &::before {
+                transform: translateX(var(--switch-BASE));
+            }
+        }
+        &:focus + .slider {
+            box-shadow: 0 0 1px var(--gray1);
+        }
+    }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--switch-bg);
+  transition: $trans-T;
+    &::before {
+        position: absolute;
+        content: "";
+        height: var(--switch-BASE);
+        width: var(--switch-BASE);
+        left: calc(var(--switch-BASE) * 0.125);
+        bottom: calc(var(--switch-BASE) * 0.125);
+        background-color: var(--switch-C);
+        transition: $trans-T;
+    }
+    &.round {
+        border-radius: calc(var(--switch-BASE) * 1.25);
+        &::before {
+            border-radius: 50%;
+        } 
+    } 
+}
+
+.payment-info-box {
+    padding: $pad-T calc(#{$pad-L} * 1.5);
+    background-color: var(--white);
+    border-radius: $bor-RADIUS;
+    box-shadow: 0 0 12px var(--gray4);
+    .row + .row {
+        margin-top: calc(#{$pad-T} * 0.5);
+        margin-top: $pad-T;
+    }
+}
+
+.qr-container {
+    max-width: 200px;
+
+    img {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+
+.online-banking {
+    &--container {
+    }
+    &--row {
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        padding: calc(#{$pad-T} * 0.5) 0;
+        justify-content: space-between;
+        @include mq(mq-land) {
+            justify-content: flex-start;
+        }
+        @include mq(mq-iPad-port) {
+            justify-content: flex-start;
+        }
+        @include mq(mq-land-L-UP) {
+            padding: calc(#{$pad-T} * 0.35) 0;
+        }
+    }
+    &--col {
+        &_label {
+            min-width: 15ch;
+            @include mq(mq-land) {
+                min-width: 20ch;
+            }
+            @include mq(mq-iPad-port) {
+                min-width: 20ch;
+            }
+        }
+    }
+}

@@ -115,6 +115,7 @@
 /* Create a custom checkbox */
         .checkmark {
             position: absolute;
+            margin-block-start: var(--flow-space, 1em);
             // top: -1px;
             // top: calc((#{$fz-H4} - var(--radio-R)) / 2);
             top: calc(var(--pad-T) * .0);

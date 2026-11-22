@@ -235,3 +235,24 @@
         }
     }
 }
+.vouchers-form--content {
+    .custom-checkbox {
+      transform: translateY(0);
+    }
+
+    .quantity-nav {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .quantity {
+      margin-block-start: var(--flow-space,1em);
+    }
+     input {
+      margin-block-start: var(--flow-space,1em);
+    }
+}
+
+.lkba-voucher-form__payment {
+  margin-top: calc(var(--pad-T)*1);
+}

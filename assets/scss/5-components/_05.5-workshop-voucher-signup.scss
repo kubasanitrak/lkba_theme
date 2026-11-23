@@ -248,7 +248,8 @@
     .quantity {
       margin-block-start: var(--flow-space,1em);
     }
-     input {
+    
+    input:not(.custom-checkbox) {
       margin-block-start: var(--flow-space,1em);
     }
 }
